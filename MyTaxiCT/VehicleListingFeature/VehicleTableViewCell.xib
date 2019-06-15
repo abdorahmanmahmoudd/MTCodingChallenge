@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="VehicleTableViewCell" rowHeight="127" id="EMN-HN-dSg" customClass="VehicleTableViewCell" customModule="MyTaxiCT" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="370" height="127"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="EMN-HN-dSg" id="SkK-Uz-VsP">
+                <rect key="frame" x="0.0" y="0.0" width="370" height="126.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="752" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YTy-rP-pTP">
+                        <rect key="frame" x="16" y="19" width="338" height="81"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" verticalCompressionResistancePriority="751" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="16a-GK-zi8">
+                        <rect key="frame" x="16" y="108" width="338" height="0.0"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="YTy-rP-pTP" firstAttribute="top" secondItem="SkK-Uz-VsP" secondAttribute="topMargin" constant="8" id="HP5-kJ-4Bm"/>
+                    <constraint firstAttribute="trailing" secondItem="YTy-rP-pTP" secondAttribute="trailing" constant="16" id="TD0-Ky-dir"/>
+                    <constraint firstAttribute="trailing" secondItem="16a-GK-zi8" secondAttribute="trailing" constant="16" id="ZfW-8H-Wu1"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="16a-GK-zi8" secondAttribute="bottom" constant="8" id="ccn-cF-nWb"/>
+                    <constraint firstItem="16a-GK-zi8" firstAttribute="top" secondItem="YTy-rP-pTP" secondAttribute="bottom" constant="8" id="hjH-S9-paN"/>
+                    <constraint firstItem="16a-GK-zi8" firstAttribute="leading" secondItem="SkK-Uz-VsP" secondAttribute="leading" constant="16" id="ozB-LB-4eY"/>
+                    <constraint firstItem="YTy-rP-pTP" firstAttribute="leading" secondItem="SkK-Uz-VsP" secondAttribute="leading" constant="16" id="waA-3B-2sl"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="fleetTypeLabel" destination="YTy-rP-pTP" id="abA-oP-jNa"/>
+                <outlet property="headingLabel" destination="16a-GK-zi8" id="0jq-q4-7Mb"/>
+            </connections>
+            <point key="canvasLocation" x="177.59999999999999" y="32.833583208395808"/>
+        </tableViewCell>
+    </objects>
+</document>
