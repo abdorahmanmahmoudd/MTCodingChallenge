@@ -113,14 +113,14 @@ extension MyTaxiAPIClient{
         switch response.result {
             
         case let .success(response):
-            mapSuccessResponseResult(withResponse: response, andModel: model, andSuccessBlock: success)
+            mapSuccessResponseResult(withResponse: response, andModel: model, andSuccessBlock: success, andFailure: failure)
             
         case let .failure(error):
             mapFailureResponseResult(withResponseData: response.data, withResponseError: error, andErrorModel: errorModel, andFailureBlock: failure)
         }
     }
     
-    func mapSuccessResponseResult<T: Decodable>(withResponse response: Any, andModel model: T, andSuccessBlock success: @escaping Success) {
+    func mapSuccessResponseResult<T: Decodable>(withResponse response: Any, andModel model: T, andSuccessBlock success: @escaping Success, andFailure failure: @escaping Failure) {
         do{
             if let jsonData = response as? [String: Any] {
                 let jsonObject = try JSONSerialization.data(withJSONObject: jsonData, options: .prettyPrinted)
@@ -133,11 +133,18 @@ extension MyTaxiAPIClient{
                 success(model)
             }
             else{
-                // TODO: May want to handle this case!
+                let myTaxiError = MyTaxiError()
+                myTaxiError.errorMessage = "Failed to parse response"
+                let errorCase = ErrorCase.generic(errorModel: myTaxiError)
+                failure(errorCase)
             }
             
         } catch let error{
             print(error)
+            let myTaxiError = MyTaxiError()
+            myTaxiError.errorMessage = error.localizedDescription
+            let errorCase = ErrorCase.generic(errorModel: myTaxiError)
+            failure(errorCase)
         }
     }
     

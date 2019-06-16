@@ -24,10 +24,11 @@
 		3A70F28E22B553DC00EC0473 /* VehiclesListingNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A70F28D22B553DC00EC0473 /* VehiclesListingNavigationController.swift */; };
 		3A70F29722B563C700EC0473 /* NearbyVehiclesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A70F29622B563C700EC0473 /* NearbyVehiclesViewController.m */; };
 		3A70F29A22B5693600EC0473 /* NearbyVehiclesViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A70F29922B5693600EC0473 /* NearbyVehiclesViewModel.m */; };
-		3A70F29E22B572BF00EC0473 /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A70F29B22B572BE00EC0473 /* Coordinate.swift */; };
 		3A70F29F22B572BF00EC0473 /* VehiclesObjc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A70F29C22B572BE00EC0473 /* VehiclesObjc.swift */; };
-		3A70F2A022B572BF00EC0473 /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A70F29D22B572BE00EC0473 /* Vehicle.swift */; };
 		3A70F2A222B5804A00EC0473 /* Vehicles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A70F2A122B5804A00EC0473 /* Vehicles.swift */; };
+		3A70F2A522B658F300EC0473 /* CoordinateObjc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A70F2A322B658F300EC0473 /* CoordinateObjc.swift */; };
+		3A70F2A622B658F300EC0473 /* VehicleObjc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A70F2A422B658F300EC0473 /* VehicleObjc.swift */; };
+		3A70F2AA22B65BAA00EC0473 /* ErrorMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A70F2A922B65BAA00EC0473 /* ErrorMessages.swift */; };
 		3AA9192F22AFC06500B6975D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA9192E22AFC06500B6975D /* AppDelegate.swift */; };
 		3AA9193422AFC06500B6975D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AA9193222AFC06500B6975D /* Main.storyboard */; };
 		3AA9193622AFC06600B6975D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AA9193522AFC06600B6975D /* Assets.xcassets */; };
@@ -82,10 +83,11 @@
 		3A70F29622B563C700EC0473 /* NearbyVehiclesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NearbyVehiclesViewController.m; sourceTree = "<group>"; };
 		3A70F29822B568F100EC0473 /* NearbyVehiclesViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NearbyVehiclesViewModel.h; sourceTree = "<group>"; };
 		3A70F29922B5693600EC0473 /* NearbyVehiclesViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NearbyVehiclesViewModel.m; sourceTree = "<group>"; };
-		3A70F29B22B572BE00EC0473 /* Coordinate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Coordinate.swift; path = ../../../../Coordinate.swift; sourceTree = "<group>"; };
 		3A70F29C22B572BE00EC0473 /* VehiclesObjc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VehiclesObjc.swift; path = ../../../../VehiclesObjc.swift; sourceTree = "<group>"; };
-		3A70F29D22B572BE00EC0473 /* Vehicle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Vehicle.swift; path = ../../../../Vehicle.swift; sourceTree = "<group>"; };
 		3A70F2A122B5804A00EC0473 /* Vehicles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vehicles.swift; sourceTree = "<group>"; };
+		3A70F2A322B658F300EC0473 /* CoordinateObjc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoordinateObjc.swift; path = ../../../../CoordinateObjc.swift; sourceTree = "<group>"; };
+		3A70F2A422B658F300EC0473 /* VehicleObjc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VehicleObjc.swift; path = ../../../../VehicleObjc.swift; sourceTree = "<group>"; };
+		3A70F2A922B65BAA00EC0473 /* ErrorMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessages.swift; sourceTree = "<group>"; };
 		3AA9192B22AFC06500B6975D /* MyTaxiCT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyTaxiCT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AA9192E22AFC06500B6975D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3AA9193322AFC06500B6975D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -217,6 +219,14 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		3A70F2A822B65B9500EC0473 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				3A70F2A922B65BAA00EC0473 /* ErrorMessages.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		3AA9192222AFC06500B6975D = {
 			isa = PBXGroup;
 			children = (
@@ -242,6 +252,7 @@
 		3AA9192D22AFC06500B6975D /* MyTaxiCT */ = {
 			isa = PBXGroup;
 			children = (
+				3A70F2A822B65B9500EC0473 /* Helpers */,
 				3A08390E22B1F1EF006CF9FB /* MyTaxiAPI */,
 				3ADA6C0F22B0277A0062135D /* APIClient */,
 				3ADA6C0E22B026E20062135D /* MapFeature */,
@@ -343,10 +354,10 @@
 			isa = PBXGroup;
 			children = (
 				3A70F2A122B5804A00EC0473 /* Vehicles.swift */,
-				3A70F29D22B572BE00EC0473 /* Vehicle.swift */,
-				3A70F29B22B572BE00EC0473 /* Coordinate.swift */,
-				3A70F29C22B572BE00EC0473 /* VehiclesObjc.swift */,
 				3A70F28022B4B1A000EC0473 /* LocationBounds.swift */,
+				3A70F2A322B658F300EC0473 /* CoordinateObjc.swift */,
+				3A70F2A422B658F300EC0473 /* VehicleObjc.swift */,
+				3A70F29C22B572BE00EC0473 /* VehiclesObjc.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -598,25 +609,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A70F2A622B658F300EC0473 /* VehicleObjc.swift in Sources */,
 				3A08390622B1D26D006CF9FB /* VehiclesRequests.swift in Sources */,
 				3ADA6C1322B037630062135D /* APIProvider.swift in Sources */,
 				3A08390122B1CBFC006CF9FB /* VehiclesTableViewModel.swift in Sources */,
 				3ADA6C1A22B0508B0062135D /* MyTaxiError.swift in Sources */,
 				3ADA6C1522B038A70062135D /* Request.swift in Sources */,
+				3A70F2AA22B65BAA00EC0473 /* ErrorMessages.swift in Sources */,
 				3A70F2A222B5804A00EC0473 /* Vehicles.swift in Sources */,
 				3A08390822B1DCB3006CF9FB /* MyTaxiAPIClient.swift in Sources */,
 				3A70F28122B4B1A000EC0473 /* LocationBounds.swift in Sources */,
 				3A0838FF22B1C6CE006CF9FB /* VehiclesTableViewController.swift in Sources */,
-				3A70F2A022B572BF00EC0473 /* Vehicle.swift in Sources */,
 				3A70F29F22B572BF00EC0473 /* VehiclesObjc.swift in Sources */,
 				3A70F28E22B553DC00EC0473 /* VehiclesListingNavigationController.swift in Sources */,
-				3A70F29E22B572BF00EC0473 /* Coordinate.swift in Sources */,
 				3A70F29722B563C700EC0473 /* NearbyVehiclesViewController.m in Sources */,
 				3A3506F422B2FA2600428E20 /* VehicleTableViewCell.swift in Sources */,
 				3A70F27D22B485A200EC0473 /* VehicleCellViewModel.swift in Sources */,
 				3AA9192F22AFC06500B6975D /* AppDelegate.swift in Sources */,
 				3A08390B22B1E6DA006CF9FB /* VehicleAPI.swift in Sources */,
 				3ADA6C1122B036E60062135D /* APIClient.swift in Sources */,
+				3A70F2A522B658F300EC0473 /* CoordinateObjc.swift in Sources */,
 				3A08390D22B1F154006CF9FB /* SharedClient.swift in Sources */,
 				3A70F29A22B5693600EC0473 /* NearbyVehiclesViewModel.m in Sources */,
 			);

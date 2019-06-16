@@ -59,7 +59,9 @@ class VehiclesTableViewModel {
             }else{
                 self?.showRefreshControl.accept(false)
             }
-            self?.cells.accept([.error(message: error?.localizedDescription ?? "Unknown error")])
+            let message = getErrorMessage(error: error)
+            self?.cells.accept([.error(message: message)])
+            
         })
     }
     
