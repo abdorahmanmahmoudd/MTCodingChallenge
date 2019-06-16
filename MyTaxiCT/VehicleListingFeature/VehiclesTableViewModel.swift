@@ -26,7 +26,7 @@ class VehiclesTableViewModel {
     // Hamburg Bounds by default
     static var bounds = LocationBounds(point1Long: 53.694865, point1Lat: 9.757589, point2Long: 53.394655, point2Lat: 10.099891)
     
-    init(myAPI: MyTaxiAPI = RealAPI()) {
+    init(myAPI: InteroperableMyTaxiAPI = RealAPI()) {
         apiProvider = APIProvider(apiProvider: myAPI)
     }
     
@@ -44,12 +44,12 @@ class VehiclesTableViewModel {
                 self?.showRefreshControl.accept(false)
             }
             
-            guard let responseModel = (response as? Vehicles), responseModel.vehicles.count > 0 else {
+            guard let responseModel = (response as? VehiclesObjc), responseModel.poiList.count > 0 else {
                 self?.cells.accept([.empty])
                 return
             }
             
-            self?.cells.accept(responseModel.vehicles.compactMap {
+            self?.cells.accept(responseModel.poiList.compactMap {
                 .normal(cellViewModel: VehicleCellViewModel(vehicle: $0))
             })
             

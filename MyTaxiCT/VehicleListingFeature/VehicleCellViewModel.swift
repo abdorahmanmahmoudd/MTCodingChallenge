@@ -17,7 +17,7 @@ class VehicleCellViewModel: NSObject {
     var latitude: Double = 0.0
     let address = BehaviorRelay<String>(value: "Vehicle address: ... ")
     
-    init(vehicle: Vehicle) {
+    init(vehicle: VehicleObjc) {
         super.init()
         
         self.fleetType = "Fleet Type: \(vehicle.fleetType ?? "")"
@@ -34,8 +34,19 @@ class VehicleCellViewModel: NSObject {
 extension VehicleCellViewModel: CLLocationManagerDelegate {
   
     func getFormattedAddress(withPlacemarkes placemarkes: CLPlacemark) -> String{
-        let textAddress = "\(placemarkes.thoroughfare  ?? "-")\n\(placemarkes.postalCode ?? "-") \(placemarkes.locality ?? "-"  )\n\(placemarkes.country ?? "-")"
-        return "Vehicle address: \(textAddress.isEmpty ? "Not available" : textAddress)"
+        var emptyAddress = false
+        if (placemarkes.thoroughfare?.isEmpty ?? true) && (placemarkes.postalCode?.isEmpty ?? true) && (placemarkes.postalCode?.isEmpty ?? true) && (placemarkes.postalCode?.isEmpty ?? true) {
+            emptyAddress = true
+        }
+        
+        //Default value
+        var textAddress = placemarkes.name
+        
+        if !emptyAddress {
+            textAddress = "\(placemarkes.thoroughfare  ?? "-")\n\(placemarkes.postalCode ?? "-") \(placemarkes.locality ?? "-"  )\n\(placemarkes.country ?? "-")"
+        }
+        
+        return "Vehicle address: \((textAddress?.isEmpty ?? true) ? "Not available" : textAddress!)"
     }
     
     func getVehicleAddress(fromLocation location: CLLocation) {
