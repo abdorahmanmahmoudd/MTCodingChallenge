@@ -10,7 +10,7 @@
 #import <MapKit/MapKit.h>
 #import "NearbyVehiclesViewModel.h"
 
-@interface NearbyVehiclesViewController : UIViewController <CLLocationManagerDelegate, UIGestureRecognizerDelegate>{
+@interface NearbyVehiclesViewController : UIViewController <CLLocationManagerDelegate, UIGestureRecognizerDelegate, MKMapViewDelegate>{
     CLLocationManager *locationManager;
 }
 @property (strong, nonatomic) IBOutlet NearbyVehiclesViewModel *viewModel;

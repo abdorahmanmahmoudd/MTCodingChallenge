@@ -23,7 +23,7 @@
 -(void) getNearbyVehicles;
 -(void) removeAllPinsButUserLocation;
 -(void) updateMapRegion;
--(void) setupDragGesture;
+-(void) setupMapView;
 @end
 
 
@@ -41,8 +41,6 @@
     self.viewModel = [[NearbyVehiclesViewModel alloc] init:realApi];
     [self bindViewModel];
     [self setupMyLocation:NO];
-    [self setupDragGesture];
-    
     
 }
 
@@ -100,7 +98,7 @@
         locationManager.delegate = self;
         locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters;
         locationManager.distanceFilter = DISTANCE_FILTER;
-        [self.mapView setShowsUserLocation:true];
+        [self setupMapView];
         locationManager.showsBackgroundLocationIndicator = true;
         if (shouldUpdateLocation) {
             [locationManager startUpdatingLocation];
@@ -108,10 +106,15 @@
     }
 }
 
-//-(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
-//    // get nearby vehicles of default location
-//    [self getNearbyVehicles];
-//}
+-(void) setupMapView {
+    _mapView.delegate = self;
+    [_mapView setShowsUserLocation:true];
+}
+
+-(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
+    // get nearby vehicles of default location
+    [self getNearbyVehicles];
+}
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations {
     [self updateMapRegion];
@@ -140,25 +143,9 @@
     [self.viewModel fetchVehicles:bounds];
 }
 
-
-//MARK: Gestures
-- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
-    return YES;
-}
-
-
-
-- (void)didDragMap:(UIGestureRecognizer*)gestureRecognizer {
-    if (gestureRecognizer.state == UIGestureRecognizerStateEnded){
-        NSLog(@"drag ended");
-        [self getNearbyVehicles];
-    }
-}
-
--(void) setupDragGesture {
-    UIPanGestureRecognizer* dragGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(didDragMap:)];
-    dragGesture.delegate = self;
-    [self.mapView addGestureRecognizer:dragGesture];
+-(void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated{
+    NSLog(@"region did change");
+    [self getNearbyVehicles];
 }
 
 @end
