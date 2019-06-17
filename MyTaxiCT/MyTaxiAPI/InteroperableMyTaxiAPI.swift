@@ -8,17 +8,17 @@
 
 import Foundation
 
-typealias InteroperableeSuccess = (NSCoding?) -> Void
+typealias InteroperableSuccess = (NSCoding?) -> Void
 
 // MARK: This protocol to be able to call api from Objective c
 @objc
 protocol InteroperableMyTaxiAPI {
     @objc
-    func fetchVehicles(withinBounds bounds: LocationBounds, success: @escaping InteroperableeSuccess, failure: @escaping Failure)
+    func fetchVehicles(withinBounds bounds: LocationBounds, success: @escaping InteroperableSuccess, failure: @escaping Failure)
 }
 
 // MARK: This class should have the real implementation of APIs
-class RealAPI: InteroperableMyTaxiAPI {}
+class RealAPI: NSObject, InteroperableMyTaxiAPI {}
 
 // MARK: This protocol should be an interface for all the APIs
 // Does not work with objc

@@ -376,10 +376,10 @@
 			buildConfigurationList = 3AA9195322AFC06600B6975D /* Build configuration list for PBXNativeTarget "MyTaxiCT" */;
 			buildPhases = (
 				9E5C1622837E3EE7C2F808FD /* [CP] Check Pods Manifest.lock */,
-				3AA9192722AFC06500B6975D /* Sources */,
 				3AA9192822AFC06500B6975D /* Frameworks */,
-				3AA9192922AFC06500B6975D /* Resources */,
 				C07A8E5D79D6F53828D674D1 /* [CP] Embed Pods Frameworks */,
+				3AA9192922AFC06500B6975D /* Resources */,
+				3AA9192722AFC06500B6975D /* Sources */,
 			);
 			buildRules = (
 			);
@@ -616,7 +616,6 @@
 				3A70F28122B4B1A000EC0473 /* LocationBounds.swift in Sources */,
 				3A0838FF22B1C6CE006CF9FB /* VehiclesTableViewController.swift in Sources */,
 				3A70F28E22B553DC00EC0473 /* VehiclesListingNavigationController.swift in Sources */,
-				3A70F29722B563C700EC0473 /* NearbyVehiclesViewController.m in Sources */,
 				3A3506F422B2FA2600428E20 /* VehicleTableViewCell.swift in Sources */,
 				3A70F27D22B485A200EC0473 /* VehicleCellViewModel.swift in Sources */,
 				3A70F2B022B6861700EC0473 /* InteroperableMyTaxiAPI.swift in Sources */,
@@ -626,6 +625,7 @@
 				3A70F2B822B69A7800EC0473 /* VehicleObjc.swift in Sources */,
 				3A08390D22B1F154006CF9FB /* SharedClient.swift in Sources */,
 				3A70F2B722B69A7500EC0473 /* VehiclesObjc.swift in Sources */,
+				3A70F29722B563C700EC0473 /* NearbyVehiclesViewController.m in Sources */,
 				3A70F29A22B5693600EC0473 /* NearbyVehiclesViewModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -717,6 +717,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -739,6 +740,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -778,6 +780,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -793,6 +796,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -805,6 +809,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = MyTaxiCT/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -814,6 +819,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.abdelrahman.MyTaxiCT;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_COMPILATION_MODE = singlefile;
 				SWIFT_OBJC_BRIDGING_HEADER = "MyTaxiCT/MyTaxiCT-Bridging-Header.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(SWIFT_MODULE_NAME)-Swift.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -829,6 +835,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = MyTaxiCT/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;

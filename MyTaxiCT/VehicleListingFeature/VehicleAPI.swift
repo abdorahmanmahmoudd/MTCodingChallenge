@@ -9,14 +9,16 @@
 import Foundation
 
 extension APIProvider{
-    func fetchVehicles(withinBounds bounds: LocationBounds, success: @escaping InteroperableeSuccess, failure: @escaping Failure) {
+    @objc
+    func fetchVehicles(withinBounds bounds: LocationBounds, success: @escaping InteroperableSuccess, failure: @escaping Failure) {
         apiProvider.fetchVehicles(withinBounds: bounds, success: success, failure: failure)
     }
 }
 
 // MARK: Vehicle APIs
 extension RealAPI {
-    func fetchVehicles(withinBounds bounds: LocationBounds, success: @escaping InteroperableeSuccess, failure: @escaping Failure) {
+    @objc
+    func fetchVehicles(withinBounds bounds: LocationBounds, success: @escaping InteroperableSuccess, failure: @escaping Failure) {
         let baseUrl = "https://fake-poi-api.mytaxi.com"
         let queryUrl = "\(baseUrl)?p2Lat=\(bounds.point2Lat)&p1Lon=\(bounds.point1Long)&p1Lat=\(bounds.point1Lat)&p2Lon=\(bounds.point2Long)"
         
@@ -57,9 +59,7 @@ extension RealAPI {
                 }
             }
         }
-        
         task.resume()
-        
     }
 
 }

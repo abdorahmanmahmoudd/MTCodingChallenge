@@ -61,7 +61,6 @@ class VehiclesTableViewModel {
             }
             let message = getErrorMessage(error: error)
             self?.cells.accept([.error(message: message)])
-            
         })
     }
     

@@ -22,8 +22,8 @@ class VehicleCellViewModel: NSObject {
         
         self.fleetType = "Fleet Type: \(vehicle.fleetType ?? "")"
         self.heading = "Heading: \(vehicle.heading ?? 0)"
-        self.longitude = vehicle.coordinate?.longitude ?? 0
-        self.latitude = vehicle.coordinate?.latitude ?? 0
+        self.longitude = Double(truncating: vehicle.coordinate?.longitude ?? 0)
+        self.latitude = Double(truncating: vehicle.coordinate?.latitude ?? 0)
         let location = CLLocation.init(latitude: self.latitude, longitude: self.longitude)
         getVehicleAddress(fromLocation: location)
     }

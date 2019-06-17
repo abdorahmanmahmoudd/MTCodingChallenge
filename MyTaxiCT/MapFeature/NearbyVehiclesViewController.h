@@ -10,10 +10,12 @@
 #import <MapKit/MapKit.h>
 #import "NearbyVehiclesViewModel.h"
 
-@interface NearbyVehiclesViewController : UIViewController{
-    NearbyVehiclesViewModel *viewModel;
+@interface NearbyVehiclesViewController : UIViewController <CLLocationManagerDelegate, UIGestureRecognizerDelegate>{
+    CLLocationManager *locationManager;
 }
-    @property (strong, nonatomic) IBOutlet MKMapView *mapView;
-    
+@property (strong, nonatomic) IBOutlet NearbyVehiclesViewModel *viewModel;
+@property (strong, nonatomic) IBOutlet MKMapView *mapView;
+-(void) bindViewModel;
+
 @end
 
