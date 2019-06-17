@@ -15,12 +15,12 @@ class VehicleCellViewModel: NSObject {
     var heading: String = ""
     var longitude: Double = 0.0
     var latitude: Double = 0.0
-    let address = BehaviorRelay<String>(value: "Vehicle address: ... ")
+    let address = BehaviorRelay<String>(value: "Car address: ... ")
     
     init(vehicle: VehicleObjc) {
         super.init()
         
-        self.fleetType = "Fleet Type: \(vehicle.fleetType ?? "")"
+        self.fleetType = "Booking Type: \(vehicle.fleetType.capitalized)"
         self.heading = "Heading: \(vehicle.heading ?? 0)"
         self.longitude = Double(truncating: vehicle.coordinate?.longitude ?? 0)
         self.latitude = Double(truncating: vehicle.coordinate?.latitude ?? 0)
@@ -46,7 +46,7 @@ extension VehicleCellViewModel: CLLocationManagerDelegate {
             textAddress = "\(placemarkes.thoroughfare  ?? "-")\n\(placemarkes.postalCode ?? "-") \(placemarkes.locality ?? "-"  )\n\(placemarkes.country ?? "-")"
         }
         
-        return "Vehicle address: \((textAddress?.isEmpty ?? true) ? "Not available" : textAddress!)"
+        return "Car address: \((textAddress?.isEmpty ?? true) ? "Not available" : textAddress!)"
     }
     
     func getVehicleAddress(fromLocation location: CLLocation) {
@@ -54,9 +54,9 @@ extension VehicleCellViewModel: CLLocationManagerDelegate {
         
         geocoder.reverseGeocodeLocation(location) { [weak self] (placemarkes, error) in
             if let placemark = placemarkes?.last, error == nil  {
-                self?.address.accept(self?.getFormattedAddress(withPlacemarkes: placemark) ?? "Vehicle address: Not available")
+                self?.address.accept(self?.getFormattedAddress(withPlacemarkes: placemark) ?? "Car address: Not available")
             }else{
-                self?.address.accept("Vehicle address: Not available")
+                self?.address.accept("Car address: Not available")
                 print("geocoder error: \(error?.localizedDescription ?? "")")
             }
         }

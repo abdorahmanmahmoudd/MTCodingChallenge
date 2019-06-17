@@ -17,7 +17,6 @@ class VehiclesTableViewController: UIViewController {
     
     // MARK: Attributes
     var vehiclesViewModel: VehiclesTableViewModel = VehiclesTableViewModel()
-    lazy var refreshControl = UIRefreshControl()
     let disposeBag = DisposeBag()
     
     // MARK: View Life Cycle
@@ -27,8 +26,6 @@ class VehiclesTableViewController: UIViewController {
         setUpTableView()
         bindViewModel()
         vehiclesViewModel.fetchNearbyVehicles()
-        setUpRefreshControl()
-
     }
     
     func setUpTableView(){
@@ -73,34 +70,16 @@ class VehiclesTableViewController: UIViewController {
             }
             .subscribe()
             .disposed(by: disposeBag)
-        
-        vehiclesViewModel.showRefreshControl.asObservable()
-            .filter {
-                $0 == false
-            }.map { [weak self] _ in
-                self?.refreshControl.endRefreshing()
-            }.subscribe()
-            .disposed(by: disposeBag)
     }
     
-    func layoutTableView(withRow row: Int) {
+    private func layoutTableView(withRow row: Int) {
         let index = IndexPath.init(row: row, section: 0)
-        self.vehiclesTableView.reloadRows(at: [index], with: .none)
+        self.vehiclesTableView.reloadRows(at: [index], with: .automatic)
     }
     
     private func setLoadingIndicator(visible: Bool) {
         PKHUD.sharedHUD.contentView = PKHUDSystemActivityIndicatorView()
         visible ? PKHUD.sharedHUD.show(onView: view) : PKHUD.sharedHUD.hide()
-    }
-    
-    func setUpRefreshControl(){
-        refreshControl.addTarget(self, action: #selector(didRefresh), for: UIControl.Event.valueChanged)
-        vehiclesTableView.refreshControl = refreshControl
-    }
-    
-    @objc
-    func didRefresh(){
-        vehiclesViewModel.fetchNearbyVehicles(andShowLoadingIndicator: false)
     }
 
 }
