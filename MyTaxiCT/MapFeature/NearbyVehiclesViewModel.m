@@ -25,6 +25,7 @@
 -(void) fetchVehicles:(LocationBounds *)bounds {
     
     if ([self->bounds isEqual:bounds]){
+        NSLog(@"Duplicate bounds");
         return;
     }
     

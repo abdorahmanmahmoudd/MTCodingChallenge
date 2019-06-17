@@ -57,6 +57,7 @@ extension VehicleCellViewModel: CLLocationManagerDelegate {
                 self?.address.accept(self?.getFormattedAddress(withPlacemarkes: placemark) ?? "Vehicle address: Not available")
             }else{
                 self?.address.accept("Vehicle address: Not available")
+                print("geocoder error: \(error?.localizedDescription ?? "")")
             }
         }
     }

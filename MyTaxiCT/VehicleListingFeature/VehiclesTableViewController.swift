@@ -48,16 +48,9 @@ class VehiclesTableViewController: UIViewController {
                 guard let cell = self?.vehiclesTableView.dequeueReusableCell(withIdentifier: VehicleTableViewCell.reusableIdentifier, for: indexPath) as? VehicleTableViewCell else {
                     return UITableViewCell()
                 }
-                
-                cell.viewModel = viewModel
-                
-                cell.viewModel?.address.asObservable().filter{
-                        !$0.isEmpty
-                    }.subscribe(onNext: { [weak self] value in
-                        self?.vehiclesTableView.beginUpdates()
-                        cell.headingLabel.text = value
-                        self?.vehiclesTableView.endUpdates()
-                    }).disposed(by: self?.disposeBag ?? DisposeBag())
+                cell.configureCell(withViewModel: viewModel, andCompletion: { [weak self] in
+                    self?.layoutTableView(withRow: index)
+                })
                 
                 return cell
                 
@@ -88,6 +81,11 @@ class VehiclesTableViewController: UIViewController {
                 self?.refreshControl.endRefreshing()
             }.subscribe()
             .disposed(by: disposeBag)
+    }
+    
+    func layoutTableView(withRow row: Int) {
+        let index = IndexPath.init(row: row, section: 0)
+        self.vehiclesTableView.reloadRows(at: [index], with: .none)
     }
     
     private func setLoadingIndicator(visible: Bool) {

@@ -9,11 +9,14 @@
 import UIKit
 import RxSwift
 
+typealias completion = (()->(Void))?
+
 class VehicleTableViewCell: UITableViewCell {
     
     static let reusableIdentifier = "VehicleTableViewCell"
     
     let disposeBag = DisposeBag()
+    var completion: completion
     
     @IBOutlet var headingLabel: UILabel!
     @IBOutlet var fleetTypeLabel: UILabel!
@@ -36,6 +39,18 @@ class VehicleTableViewCell: UITableViewCell {
         if let viewModel = viewModel {
             fleetTypeLabel?.text = viewModel.fleetType
         }
+    }
+    
+    func configureCell(withViewModel viewModel: VehicleCellViewModel, andCompletion completion: completion) {
+        
+        self.viewModel = viewModel
+        self.completion = completion
+        self.viewModel?.address.asObservable().filter{
+            !$0.isEmpty
+            }.subscribe(onNext: { [weak self] value in
+                self?.headingLabel.text = value
+                self?.completion?()
+            }).disposed(by: disposeBag)
     }
 
 }

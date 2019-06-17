@@ -13,7 +13,7 @@
 #import "MyTaxiCT-Swift.h"
 
 #define METERS_PER_MILE 1609.344
-#define DISTANCE_FILTER 10
+#define DISTANCE_FILTER 20
 
 // MARK: My Location
 @interface NearbyVehiclesViewController() {
