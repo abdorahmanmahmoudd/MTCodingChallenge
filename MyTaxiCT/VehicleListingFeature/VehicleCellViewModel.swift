@@ -15,7 +15,7 @@ class VehicleCellViewModel: NSObject {
     var heading: String = ""
     var longitude: Double = 0.0
     var latitude: Double = 0.0
-    let address = BehaviorRelay<String>(value: "Car address: ... ")
+    let address = BehaviorRelay<String>(value: "Car address: ...")
     
     init(vehicle: VehicleObjc) {
         super.init()
@@ -53,6 +53,7 @@ extension VehicleCellViewModel: CLLocationManagerDelegate {
         let geocoder = CLGeocoder()
         
         geocoder.reverseGeocodeLocation(location) { [weak self] (placemarkes, error) in
+            print("\(String(describing: placemarkes))")
             if let placemark = placemarkes?.last, error == nil  {
                 self?.address.accept(self?.getFormattedAddress(withPlacemarkes: placemark) ?? "Car address: Not available")
             }else{
