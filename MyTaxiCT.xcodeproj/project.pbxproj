@@ -36,6 +36,9 @@
 		3AA9193922AFC06600B6975D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AA9193722AFC06600B6975D /* LaunchScreen.storyboard */; };
 		3AA9194422AFC06600B6975D /* MyTaxiCTTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA9194322AFC06600B6975D /* MyTaxiCTTests.swift */; };
 		3AA9194F22AFC06600B6975D /* MyTaxiCTUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA9194E22AFC06600B6975D /* MyTaxiCTUITests.swift */; };
+		3AAE0C4522B87FE2005437EB /* MockAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAE0C4422B87FE2005437EB /* MockAPI.swift */; };
+		3AAE0C4822B882F0005437EB /* VehiclesTableViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAE0C4722B882F0005437EB /* VehiclesTableViewModelTests.swift */; };
+		3AAE0C4A22B88412005437EB /* MockVehiclesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAE0C4922B88412005437EB /* MockVehiclesModel.swift */; };
 		3ADA6C1122B036E60062135D /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADA6C1022B036E60062135D /* APIClient.swift */; };
 		3ADA6C1322B037630062135D /* APIProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADA6C1222B037630062135D /* APIProvider.swift */; };
 		3ADA6C1522B038A70062135D /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADA6C1422B038A70062135D /* Request.swift */; };
@@ -102,6 +105,9 @@
 		3AA9194A22AFC06600B6975D /* MyTaxiCTUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyTaxiCTUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AA9194E22AFC06600B6975D /* MyTaxiCTUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTaxiCTUITests.swift; sourceTree = "<group>"; };
 		3AA9195022AFC06600B6975D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3AAE0C4422B87FE2005437EB /* MockAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAPI.swift; sourceTree = "<group>"; };
+		3AAE0C4722B882F0005437EB /* VehiclesTableViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehiclesTableViewModelTests.swift; sourceTree = "<group>"; };
+		3AAE0C4922B88412005437EB /* MockVehiclesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockVehiclesModel.swift; sourceTree = "<group>"; };
 		3ADA6C1022B036E60062135D /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		3ADA6C1222B037630062135D /* APIProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIProvider.swift; sourceTree = "<group>"; };
 		3ADA6C1422B038A70062135D /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
@@ -185,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				3A70F28322B54C3300EC0473 /* ModelTests.swift */,
+				3AAE0C4922B88412005437EB /* MockVehiclesModel.swift */,
 			);
 			name = ModelTests;
 			sourceTree = "<group>";
@@ -267,6 +274,8 @@
 		3AA9194222AFC06600B6975D /* MyTaxiCTTests */ = {
 			isa = PBXGroup;
 			children = (
+				3AAE0C4622B882AE005437EB /* ViewModelTests */,
+				3AAE0C4122B87A12005437EB /* MockAPI */,
 				3A70F28222B54C1400EC0473 /* ModelTests */,
 				3AA9194322AFC06600B6975D /* MyTaxiCTTests.swift */,
 				3AA9194522AFC06600B6975D /* Info.plist */,
@@ -281,6 +290,22 @@
 				3AA9195022AFC06600B6975D /* Info.plist */,
 			);
 			path = MyTaxiCTUITests;
+			sourceTree = "<group>";
+		};
+		3AAE0C4122B87A12005437EB /* MockAPI */ = {
+			isa = PBXGroup;
+			children = (
+				3AAE0C4422B87FE2005437EB /* MockAPI.swift */,
+			);
+			name = MockAPI;
+			sourceTree = "<group>";
+		};
+		3AAE0C4622B882AE005437EB /* ViewModelTests */ = {
+			isa = PBXGroup;
+			children = (
+				3AAE0C4722B882F0005437EB /* VehiclesTableViewModelTests.swift */,
+			);
+			name = ViewModelTests;
 			sourceTree = "<group>";
 		};
 		3ADA6C0D22B026B80062135D /* VehicleListingFeature */ = {
@@ -635,6 +660,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				3AA9194422AFC06600B6975D /* MyTaxiCTTests.swift in Sources */,
+				3AAE0C4522B87FE2005437EB /* MockAPI.swift in Sources */,
+				3AAE0C4822B882F0005437EB /* VehiclesTableViewModelTests.swift in Sources */,
+				3AAE0C4A22B88412005437EB /* MockVehiclesModel.swift in Sources */,
 				3A70F28422B54C3300EC0473 /* ModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -810,7 +838,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 5XHMD2CMM5;
 				INFOPLIST_FILE = MyTaxiCT/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -836,7 +864,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 5XHMD2CMM5;
 				INFOPLIST_FILE = MyTaxiCT/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (

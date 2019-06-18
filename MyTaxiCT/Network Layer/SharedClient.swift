@@ -8,6 +8,7 @@
 
 import Foundation
 
+//MARK: Currently this class is not used because it only work with Swift classes
 // MARK: This class can be used to mock the API Client it self and generally it should be shared between all the APIs
 final class SharedClient {
     
