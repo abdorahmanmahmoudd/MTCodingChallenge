@@ -46,10 +46,28 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PPn-Vk-naG">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                             </mapView>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="csj-VH-lRB">
+                                <rect key="frame" x="319" y="562" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="0hR-OE-ahJ"/>
+                                    <constraint firstAttribute="width" constant="40" id="BJP-fT-R09"/>
+                                </constraints>
+                                <state key="normal" image="currentLocation"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="currentLocationButtonClicked:" destination="dGa-MM-Xda" eventType="touchUpInside" id="UUb-HV-epr"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="Tky-oS-694" firstAttribute="trailing" secondItem="csj-VH-lRB" secondAttribute="trailing" constant="16" id="1Mj-FE-AuC"/>
                             <constraint firstItem="Tky-oS-694" firstAttribute="bottom" secondItem="PPn-Vk-naG" secondAttribute="bottom" id="Mxo-ld-fNb"/>
+                            <constraint firstItem="Tky-oS-694" firstAttribute="bottom" secondItem="csj-VH-lRB" secondAttribute="bottom" constant="16" id="RIa-wk-Qot"/>
                             <constraint firstItem="PPn-Vk-naG" firstAttribute="top" secondItem="eUu-EC-cub" secondAttribute="top" id="aVu-gb-XGu"/>
                             <constraint firstItem="Tky-oS-694" firstAttribute="trailing" secondItem="PPn-Vk-naG" secondAttribute="trailing" id="h0t-Rj-xV5"/>
                             <constraint firstItem="PPn-Vk-naG" firstAttribute="leading" secondItem="Tky-oS-694" secondAttribute="leading" id="yAZ-H6-NFo"/>
@@ -68,6 +86,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="currentLocation" width="138.46153259277344" height="138.46153259277344"/>
         <image name="discover" width="24" height="24"/>
     </resources>
 </document>

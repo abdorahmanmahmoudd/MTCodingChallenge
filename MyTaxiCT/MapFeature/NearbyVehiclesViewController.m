@@ -22,7 +22,7 @@
 -(void) setupMyLocation: (BOOL) shouldUpdateLocation;
 -(void) getNearbyVehicles;
 -(void) removeAllPinsButUserLocation;
--(void) updateMapRegion;
+-(void) updateMapRegion: (BOOL) animated;
 -(void) setupMapView;
 @end
 
@@ -117,15 +117,15 @@
 }
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations {
-    [self updateMapRegion];
+    [self updateMapRegion: NO];
     [self getNearbyVehicles];
 }
 
--(void) updateMapRegion {
+-(void) updateMapRegion: (BOOL) animated {
     CLLocationCoordinate2D myLocation = locationManager.location.coordinate;
     MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(myLocation, 3.0*METERS_PER_MILE, 3.0*METERS_PER_MILE);
     MKCoordinateRegion adjustedRegion = [_mapView regionThatFits:viewRegion];
-    [_mapView setRegion:adjustedRegion animated:NO];
+    [_mapView setRegion:adjustedRegion animated:animated];
 }
 
 
@@ -146,6 +146,9 @@
 -(void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated{
     NSLog(@"region did change");
     [self getNearbyVehicles];
+}
+- (IBAction)currentLocationButtonClicked:(UIButton *)sender {
+    [self updateMapRegion: YES];
 }
 
 @end
