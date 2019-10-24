@@ -27,9 +27,9 @@
 		3A70F2A222B5804A00EC0473 /* Vehicles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A70F2A122B5804A00EC0473 /* Vehicles.swift */; };
 		3A70F2AA22B65BAA00EC0473 /* ErrorMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A70F2A922B65BAA00EC0473 /* ErrorMessages.swift */; };
 		3A70F2B022B6861700EC0473 /* InteroperableMyTaxiAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A70F2AF22B6861700EC0473 /* InteroperableMyTaxiAPI.swift */; };
-		3A70F2B722B69A7500EC0473 /* VehiclesObjc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A70F2B422B69A4D00EC0473 /* VehiclesObjc.swift */; };
-		3A70F2B822B69A7800EC0473 /* VehicleObjc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A70F2B522B69A4D00EC0473 /* VehicleObjc.swift */; };
-		3A70F2B922B69A7B00EC0473 /* CoordinateObjc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A70F2B622B69A4D00EC0473 /* CoordinateObjc.swift */; };
+		3A7ADE3622E1F594003503AC /* VehicleObjc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7ADE3322E1F594003503AC /* VehicleObjc.swift */; };
+		3A7ADE3722E1F594003503AC /* VehiclesObjc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7ADE3422E1F594003503AC /* VehiclesObjc.swift */; };
+		3A7ADE3822E1F594003503AC /* CoordinateObjc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7ADE3522E1F594003503AC /* CoordinateObjc.swift */; };
 		3AA9192F22AFC06500B6975D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA9192E22AFC06500B6975D /* AppDelegate.swift */; };
 		3AA9193422AFC06500B6975D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AA9193222AFC06500B6975D /* Main.storyboard */; };
 		3AA9193622AFC06600B6975D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AA9193522AFC06600B6975D /* Assets.xcassets */; };
@@ -90,9 +90,9 @@
 		3A70F2A122B5804A00EC0473 /* Vehicles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vehicles.swift; sourceTree = "<group>"; };
 		3A70F2A922B65BAA00EC0473 /* ErrorMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessages.swift; sourceTree = "<group>"; };
 		3A70F2AF22B6861700EC0473 /* InteroperableMyTaxiAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteroperableMyTaxiAPI.swift; sourceTree = "<group>"; };
-		3A70F2B422B69A4D00EC0473 /* VehiclesObjc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VehiclesObjc.swift; path = ../../../../VehiclesObjc.swift; sourceTree = "<group>"; };
-		3A70F2B522B69A4D00EC0473 /* VehicleObjc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VehicleObjc.swift; path = ../../../../VehicleObjc.swift; sourceTree = "<group>"; };
-		3A70F2B622B69A4D00EC0473 /* CoordinateObjc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CoordinateObjc.swift; path = ../../../../CoordinateObjc.swift; sourceTree = "<group>"; };
+		3A7ADE3322E1F594003503AC /* VehicleObjc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VehicleObjc.swift; sourceTree = "<group>"; };
+		3A7ADE3422E1F594003503AC /* VehiclesObjc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VehiclesObjc.swift; sourceTree = "<group>"; };
+		3A7ADE3522E1F594003503AC /* CoordinateObjc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoordinateObjc.swift; sourceTree = "<group>"; };
 		3AA9192B22AFC06500B6975D /* MyTaxiCT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyTaxiCT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AA9192E22AFC06500B6975D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3AA9193322AFC06500B6975D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -224,9 +224,9 @@
 		3A70F28822B5509A00EC0473 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				3A70F2B622B69A4D00EC0473 /* CoordinateObjc.swift */,
-				3A70F2B522B69A4D00EC0473 /* VehicleObjc.swift */,
-				3A70F2B422B69A4D00EC0473 /* VehiclesObjc.swift */,
+				3A7ADE3522E1F594003503AC /* CoordinateObjc.swift */,
+				3A7ADE3322E1F594003503AC /* VehicleObjc.swift */,
+				3A7ADE3422E1F594003503AC /* VehiclesObjc.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -633,10 +633,11 @@
 				3ADA6C1322B037630062135D /* APIProvider.swift in Sources */,
 				3A08390122B1CBFC006CF9FB /* VehiclesTableViewModel.swift in Sources */,
 				3ADA6C1A22B0508B0062135D /* MyTaxiError.swift in Sources */,
-				3A70F2B922B69A7B00EC0473 /* CoordinateObjc.swift in Sources */,
+				3A7ADE3722E1F594003503AC /* VehiclesObjc.swift in Sources */,
 				3ADA6C1522B038A70062135D /* Request.swift in Sources */,
 				3A70F2AA22B65BAA00EC0473 /* ErrorMessages.swift in Sources */,
 				3A70F2A222B5804A00EC0473 /* Vehicles.swift in Sources */,
+				3A7ADE3822E1F594003503AC /* CoordinateObjc.swift in Sources */,
 				3A08390822B1DCB3006CF9FB /* MyTaxiAPIClient.swift in Sources */,
 				3A70F28122B4B1A000EC0473 /* LocationBounds.swift in Sources */,
 				3A0838FF22B1C6CE006CF9FB /* VehiclesTableViewController.swift in Sources */,
@@ -647,9 +648,8 @@
 				3AA9192F22AFC06500B6975D /* AppDelegate.swift in Sources */,
 				3A08390B22B1E6DA006CF9FB /* VehicleAPI.swift in Sources */,
 				3ADA6C1122B036E60062135D /* APIClient.swift in Sources */,
-				3A70F2B822B69A7800EC0473 /* VehicleObjc.swift in Sources */,
+				3A7ADE3622E1F594003503AC /* VehicleObjc.swift in Sources */,
 				3A08390D22B1F154006CF9FB /* SharedClient.swift in Sources */,
-				3A70F2B722B69A7500EC0473 /* VehiclesObjc.swift in Sources */,
 				3A70F29722B563C700EC0473 /* NearbyVehiclesViewController.m in Sources */,
 				3A70F29A22B5693600EC0473 /* NearbyVehiclesViewModel.m in Sources */,
 			);

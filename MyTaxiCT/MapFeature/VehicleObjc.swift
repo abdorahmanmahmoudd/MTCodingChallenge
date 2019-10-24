@@ -7,12 +7,17 @@
 
 import Foundation
 
-
+@objc
 class VehicleObjc : NSObject, NSCoding{
 
+    @objc
 	var coordinate : CoordinateObjc!
+    
+    @objc
 	var fleetType : String!
+    
 	var heading : Double!
+    
 	var id : Int!
 
     override init() {}

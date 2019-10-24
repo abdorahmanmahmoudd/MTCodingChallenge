@@ -7,11 +7,14 @@
 
 import Foundation
 
-
+@objc
 class CoordinateObjc : NSObject, NSCoding{
 
-	var latitude : Double!
-	var longitude : Double!
+    @objc
+	var latitude : NSNumber!
+    
+    @objc
+	var longitude : NSNumber!
 
     override init() {}
 
@@ -19,8 +22,8 @@ class CoordinateObjc : NSObject, NSCoding{
 	 * Instantiate the instance using the passed dictionary values to set the properties values
 	 */
 	init(fromDictionary dictionary: [String:Any]){
-		latitude = dictionary["latitude"] as? Double
-		longitude = dictionary["longitude"] as? Double
+		latitude = dictionary["latitude"] as? NSNumber
+		longitude = dictionary["longitude"] as? NSNumber
 	}
 
 	/**
@@ -44,8 +47,8 @@ class CoordinateObjc : NSObject, NSCoding{
     */
     @objc required init(coder aDecoder: NSCoder)
 	{
-         latitude = aDecoder.decodeObject(forKey: "latitude") as? Double
-         longitude = aDecoder.decodeObject(forKey: "longitude") as? Double
+         latitude = aDecoder.decodeObject(forKey: "latitude") as? NSNumber
+         longitude = aDecoder.decodeObject(forKey: "longitude") as? NSNumber
 
 	}
 

@@ -6,10 +6,10 @@
 
 import Foundation
 
-
+@objc
 class VehiclesObjc : NSObject, NSCoding{
 
-	var poiList : [VehicleObjc]!
+	@objc var poiList : [VehicleObjc]!
     
     override init() {}
 

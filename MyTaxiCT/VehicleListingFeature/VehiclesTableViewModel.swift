@@ -35,7 +35,9 @@ class VehiclesTableViewModel {
         
         apiProvider.fetchVehicles(withinBounds: bounds, success: { [weak self] response in
             
-            self?.showLoadingIndicator.accept(false)
+            DispatchQueue.main.async {
+                self?.showLoadingIndicator.accept(false)
+            }
             
             guard let responseModel = (response as? VehiclesObjc), responseModel.poiList.count > 0 else {
                 self?.cells.accept([.empty])
@@ -47,7 +49,9 @@ class VehiclesTableViewModel {
             })
             
         }, failure: { [weak self] error in
-            self?.showLoadingIndicator.accept(false)
+            DispatchQueue.main.async {
+                self?.showLoadingIndicator.accept(false)
+            }
             let message = getErrorMessage(error: error)
             self?.cells.accept([.error(message: message)])
         })
